@@ -1,0 +1,35 @@
+# Build
+target/
+*.jar
+*.class
+
+# Maven
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Node (AKHQ)
+node_modules/
+
+# Spring
+*.pid

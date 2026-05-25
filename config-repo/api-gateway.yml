@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: citizen-service
+          uri: lb://citizen-service
+          predicates:
+            - Path=/api/citizens/**
+        - id: sensor-service
+          uri: lb://sensor-service
+          predicates:
+            - Path=/api/sensors/**
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/notifications/**
+
+# Custom security configuration properties
+security:
+  api-key:
+    header: X-API-Key
+    value: CivicAISecretKey2025
+
+# Rate Limiter Settings
+rate-limiter:
+  replenish-rate: 100
+  burst-capacity: 100
